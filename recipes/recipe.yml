@@ -20,6 +20,7 @@ modules:
       copr:
         - blakegardner/xremap
         - erikreider/swayosd
+        - erovia/dfu-programmer
     install:
       packages:
         # --- SYSTEM FOUNDATION ---
@@ -52,7 +53,7 @@ modules:
         - fzf
         - bat
         - ripgrep
-        - fd
+        - fd-find
         - jq
         - htop
         # --- GRAPHICS & MEDIA ---
@@ -72,13 +73,11 @@ modules:
         - bc
         - dash
         - file
-        - gptfdisk
+        - gdisk
         - inxi
         - mupdf
         - nmap
         - progress
-        - pulsemixer
-        - termdown
         - tldr
         - trash-cli
         - unar
@@ -86,8 +85,6 @@ modules:
         - usbutils
         - wev
         - wl-clipboard
-        - wl-color-picker
-        - wlsunset
         - wordgrinder
 
   - type: default-flatpaks
