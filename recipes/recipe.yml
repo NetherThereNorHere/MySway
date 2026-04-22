@@ -16,7 +16,7 @@ modules:
         destination: /
 
   - type: dnf
-    repos:
+    # repos:
       # copr:
     install:
       # --- SYSTEM FOUNDATION ---
