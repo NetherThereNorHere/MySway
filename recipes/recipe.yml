@@ -95,6 +95,7 @@ modules:
           title: Flathub Beta
           url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
         install:
+          - org.kde.Platform/x86_64/5.15-21.08
           - org.openrgb.OpenRGB
       
       - scope: system # Installs for everyone; users cannot easily uninstall these
