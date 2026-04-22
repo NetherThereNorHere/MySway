@@ -5,10 +5,8 @@ name: mysway
 description: Minimal Sway build that suits my needs.
 
 base-image: ghcr.io/blue-build/base-images/fedora-base
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
@@ -91,14 +89,9 @@ modules:
     configurations:
       - scope: system
         repo:
-          name: flathub-beta
-          title: Flathub Beta
-          url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-        install:
-          - org.kde.Platform/x86_64/5.15-21.08
-          - org.openrgb.OpenRGB
-      
-      - scope: system # Installs for everyone; users cannot easily uninstall these
+          name: flathub
+          title: Flathub
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
         install:
           - com.github.Matoking.protontricks
           - com.github.tchx84.Flatseal
@@ -107,7 +100,19 @@ modules:
           - com.valvesoftware.Steam
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       
-      - scope: user # Ensures the Flathub repo is also ready for users to install their own apps
+      - scope: user
+        repo:
+          name: flathub
+          title: Flathub
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
+          
+      - scope: system
+        repo:
+          name: flathub-beta
+          title: Flathub Beta
+          url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+        install:
+          - org.openrgb.OpenRGB
 
   - type: script
     snippets:
