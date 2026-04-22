@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: MySway
+name: mysway
 description: Minimal Sway build that suits my needs.
 
 base-image: ghcr.io/blue-build/base-images/fedora-base
