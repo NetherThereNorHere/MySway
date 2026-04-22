@@ -28,7 +28,6 @@ modules:
       - xdg-desktop-portal-gtk
       - xdg-desktop-portal-wlr
       - xorg-x11-server-Xwayland
-
       # --- DESKTOP & UI ---
       - sddm
       - sddm-themes
@@ -42,7 +41,6 @@ modules:
       - wpaperd
       - swayosd
       - jetbrains-mono-fonts-all
-      
       # --- SHELL & UTILS ---
       - zsh
       - stow
@@ -54,11 +52,9 @@ modules:
       - fd-find
       - jq
       - htop
-      
       # --- GRAPHICS & MEDIA ---
       - mpv
       - swayimg
-      
       # --- HARDWARE & DEV ---
       - distrobox
       - openrgb-udev-rules
@@ -68,7 +64,6 @@ modules:
       - xremap
       - dfu-util
       - dfu-programmer
-      
       # --- MISC UTILS ---
       - aria2
       - bc
