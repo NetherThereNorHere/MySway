@@ -35,7 +35,6 @@ modules:
         - xorg-x11-server-Xwayland
         # --- DESKTOP & UI ---
         - sddm
-        - sddm-theme-fedora
         - sway
         - foot
         - fuzzel
@@ -43,7 +42,6 @@ modules:
         - swayidle
         - swaylock
         - mako
-        - wpaperd
         - swayosd
         - jetbrains-mono-fonts-all
         # --- SHELL & UTILS ---
@@ -54,7 +52,7 @@ modules:
         - fzf
         - bat
         - ripgrep
-        - fd-find
+        - fd
         - jq
         - htop
         # --- GRAPHICS & MEDIA ---
