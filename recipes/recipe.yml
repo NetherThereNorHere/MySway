@@ -22,7 +22,12 @@ modules:
     install:
       packages:
         # --- SYSTEM FOUNDATION ---
+        - libva-utils
         - mesa-dri-drivers
+        - mesa-vulkan-drivers
+        - vulkan-loader
+        - mesa-va-drivers-freeworld
+        
         - NetworkManager
         - pipewire
         - policycoreutils
