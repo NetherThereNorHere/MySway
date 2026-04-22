@@ -10,24 +10,21 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
   - type: dnf
     repos:
       copr:
     install:
       # --- SYSTEM FOUNDATION ---
-      - xorg-x11-server-Xwayland
-      - selinux-policy-targeted
-      - policycoreutils
-      - pipewire
-      - pipewire-pulseaudio
-      - wireplumber
-      - NetworkManager
       - mesa-dri-drivers
+      - NetworkManager
+      - pipewire
+      - policycoreutils
+      - pipewire-pulseaudio
+      - selinux-policy-targeted
+      - wireplumber
+      - xdg-desktop-portal-gtk
+      - xdg-desktop-portal-wlr
+      - xorg-x11-server-Xwayland
 
       # --- DESKTOP & UI ---
       - sddm
@@ -76,6 +73,7 @@ modules:
       - file
       - gptfdisk
       - inxi
+      - mupdf
       - nmap
       - progress
       - pulsemixer
@@ -95,8 +93,14 @@ modules:
     configurations:
       - scope: system # Installs for everyone; users cannot easily uninstall these
         install:
+          - com.github.Matoking.protontricks
+	        - com.github.tchx84.Flatseal
+          - io.github.wivrn.wivrn
           - io.gitlab.librewolf-community
+          - com.valvesoftware.Steam
+          - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       - scope: user # Ensures the Flathub repo is also ready for users to install their own apps
+
   - type: script
     snippets:
       - "systemctl enable sddm.service"
