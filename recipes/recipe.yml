@@ -94,7 +94,7 @@ modules:
       - scope: system # Installs for everyone; users cannot easily uninstall these
         install:
           - com.github.Matoking.protontricks
-	        - com.github.tchx84.Flatseal
+          - com.github.tchx84.Flatseal
           - io.github.wivrn.wivrn
           - io.gitlab.librewolf-community
           - com.valvesoftware.Steam
