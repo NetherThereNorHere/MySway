@@ -90,6 +90,9 @@ modules:
         - wev
         - wl-clipboard
         - wordgrinder
+    remove:
+      packages:
+        - firefox
 
   - type: default-flatpaks
     configurations:
