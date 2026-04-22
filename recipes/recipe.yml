@@ -2,10 +2,8 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: MySway
-# description will be included in the image's metadata
-description: This is my personal OS image.
+description: Minimal Sway build that suits my needs.
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/blue-build/base-images/fedora-base
 image-version: latest # latest is also supported if you want new updates ASAP
 
@@ -20,26 +18,84 @@ modules:
   - type: dnf
     repos:
       copr:
-        - atim/starship
     install:
-      packages:
-        - micro
-        - starship
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+      # --- SYSTEM FOUNDATION ---
+      - xorg-x11-server-Xwayland
+      - selinux-policy-targeted
+      - policycoreutils
+      - pipewire
+      - pipewire-pulseaudio
+      - wireplumber
+      - NetworkManager
+      - mesa-dri-drivers
 
-  - type: default-flatpaks
+      # --- DESKTOP & UI ---
+      - sddm
+      - sddm-themes
+      - sway
+      - foot
+      - fuzzel
+      - swaybg
+      - swayidle
+      - swaylock
+      - mako
+      - wpaperd
+      - swayosd
+      - jetbrains-mono-fonts-all
+      
+      # --- SHELL & UTILS ---
+      - zsh
+      - stow
+      - eza
+      - zoxide
+      - fzf
+      - bat
+      - ripgrep
+      - fd-find
+      - jq
+      - htop
+      
+      # --- GRAPHICS & MEDIA ---
+      - mpv
+      - swayimg
+      
+      # --- HARDWARE & DEV ---
+      - distrobox
+      - openrgb-udev-rules
+      - steam-devices
+      - i2c-tools
+      - solaar
+      - xremap
+      - dfu-util
+      - dfu-programmer
+      
+      # --- MISC UTILS ---
+      - aria2
+      - bc
+      - dash
+      - file
+      - gptfdisk
+      - inxi
+      - nmap
+      - progress
+      - pulsemixer
+      - termdown
+      - tldr
+      - trash-cli
+      - unar
+      - unzip
+      - usbutils
+      - wev
+      - wl-clipboard
+      - wl-color-picker
+      - wlsunset
+      - wordgrinder
+
+    - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+      - scope: system # Installs for everyone; users cannot easily uninstall these
+        install:
+          - io.gitlab.librewolf-community
+      - scope: user # Ensures the Flathub repo is also ready for users to install their own apps
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
