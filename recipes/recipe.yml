@@ -96,6 +96,14 @@ modules:
 
   - type: default-flatpaks
     configurations:
+      - scope: system
+        repo:
+          name: flathub-beta
+          title: Flathub Beta
+          url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+        install:
+          - org.openrgb.OpenRGB
+      
       - scope: system # Installs for everyone; users cannot easily uninstall these
         install:
           - com.github.Matoking.protontricks
@@ -104,6 +112,7 @@ modules:
           - io.gitlab.librewolf-community
           - com.valvesoftware.Steam
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+      
       - scope: user # Ensures the Flathub repo is also ready for users to install their own apps
 
   - type: script
