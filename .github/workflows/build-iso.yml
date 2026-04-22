@@ -42,8 +42,8 @@ jobs:
           maximize_build_space: true
       - name: Generate ISO
         run: |
-          sudo bluebuild generate-iso --iso-name mysway.iso image ghcr.io/${{ github.repository_owner }}/mysway:latest
-
+          sudo bluebuild generate-iso --iso-name mysway.iso image ghcr.io/nethertherenorhere/mysway:latest
+      
       - name: Upload ISO as Artifact
         uses: actions/upload-artifact@v4
         with:
