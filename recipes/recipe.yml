@@ -17,75 +17,76 @@ modules:
 
   - type: dnf
     install:
-      # --- SYSTEM FOUNDATION ---
-      - mesa-dri-drivers
-      - NetworkManager
-      - pipewire
-      - policycoreutils
-      - pipewire-pulseaudio
-      - selinux-policy-targeted
-      - wireplumber
-      - xdg-desktop-portal-gtk
-      - xdg-desktop-portal-wlr
-      - xorg-x11-server-Xwayland
-      # --- DESKTOP & UI ---
-      - sddm
-      - sddm-themes
-      - sway
-      - foot
-      - fuzzel
-      - swaybg
-      - swayidle
-      - swaylock
-      - mako
-      - wpaperd
-      - swayosd
-      - jetbrains-mono-fonts-all
-      # --- SHELL & UTILS ---
-      - zsh
-      - stow
-      - eza
-      - zoxide
-      - fzf
-      - bat
-      - ripgrep
-      - fd-find
-      - jq
-      - htop
-      # --- GRAPHICS & MEDIA ---
-      - mpv
-      - swayimg
-      # --- HARDWARE & DEV ---
-      - distrobox
-      - openrgb-udev-rules
-      - steam-devices
-      - i2c-tools
-      - solaar
-      - xremap
-      - dfu-util
-      - dfu-programmer
-      # --- MISC UTILS ---
-      - aria2
-      - bc
-      - dash
-      - file
-      - gptfdisk
-      - inxi
-      - mupdf
-      - nmap
-      - progress
-      - pulsemixer
-      - termdown
-      - tldr
-      - trash-cli
-      - unar
-      - unzip
-      - usbutils
-      - wev
-      - wl-clipboard
-      - wl-color-picker
-      - wlsunset
-      - wordgrinder
+      packages:
+        # --- SYSTEM FOUNDATION ---
+        - mesa-dri-drivers
+        - NetworkManager
+        - pipewire
+        - policycoreutils
+        - pipewire-pulseaudio
+        - selinux-policy-targeted
+        - wireplumber
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-wlr
+        - xorg-x11-server-Xwayland
+        # --- DESKTOP & UI ---
+        - sddm
+        - sddm-themes
+        - sway
+        - foot
+        - fuzzel
+        - swaybg
+        - swayidle
+        - swaylock
+        - mako
+        - wpaperd
+        - swayosd
+        - jetbrains-mono-fonts-all
+        # --- SHELL & UTILS ---
+        - zsh
+        - stow
+        - eza
+        - zoxide
+        - fzf
+        - bat
+        - ripgrep
+        - fd-find
+        - jq
+        - htop
+        # --- GRAPHICS & MEDIA ---
+        - mpv
+        - swayimg
+        # --- HARDWARE & DEV ---
+        - distrobox
+        - openrgb-udev-rules
+        - steam-devices
+        - i2c-tools
+        - solaar
+        - xremap
+        - dfu-util
+        - dfu-programmer
+        # --- MISC UTILS ---
+        - aria2
+        - bc
+        - dash
+        - file
+        - gptfdisk
+        - inxi
+        - mupdf
+        - nmap
+        - progress
+        - pulsemixer
+        - termdown
+        - tldr
+        - trash-cli
+        - unar
+        - unzip
+        - usbutils
+        - wev
+        - wl-clipboard
+        - wl-color-picker
+        - wlsunset
+        - wordgrinder
 
   - type: default-flatpaks
     configurations:
