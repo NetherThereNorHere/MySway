@@ -93,6 +93,7 @@ modules:
     remove:
       packages:
         - firefox
+        - firefox-langpacks
 
   - type: default-flatpaks
     configurations:
