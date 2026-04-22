@@ -16,8 +16,6 @@ modules:
         destination: /
 
   - type: dnf
-    # repos:
-      # copr:
     install:
       # --- SYSTEM FOUNDATION ---
       - mesa-dri-drivers
