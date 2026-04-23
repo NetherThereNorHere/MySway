@@ -16,9 +16,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        - blakegardner/xremap
         - erikreider/swayosd
-        - erovia/dfu-programmer
     install:
       packages:
         # --- SYSTEM FOUNDATION ---
@@ -69,9 +67,6 @@ modules:
         - steam-devices
         - i2c-tools
         - solaar
-        - xremap
-        - dfu-util
-        - dfu-programmer
         # --- MISC UTILS ---
         - aria2
         - bc
