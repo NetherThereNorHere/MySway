@@ -94,10 +94,6 @@ modules:
   - type: default-flatpaks
     configurations:
       - scope: system
-        repo:
-          name: flathub
-          title: Flathub
-          url: https://dl.flathub.org/repo/flathub.flatpakrepo
         install:
           - com.github.Matoking.protontricks
           - com.github.tchx84.Flatseal
@@ -105,20 +101,7 @@ modules:
           - io.gitlab.librewolf-community
           - com.valvesoftware.Steam
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-      
       - scope: user
-        repo:
-          name: flathub
-          title: Flathub
-          url: https://dl.flathub.org/repo/flathub.flatpakrepo
-          
-      - scope: system
-        repo:
-          name: flathub-beta
-          title: Flathub Beta
-          url: https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-        install:
-          - org.openrgb.OpenRGB
 
   - type: script
     snippets:
