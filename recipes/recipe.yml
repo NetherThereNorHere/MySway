@@ -41,6 +41,7 @@ modules:
         - sway
         - foot
         - fuzzel
+        - py3status
         - swaybg
         - swayidle
         - swaylock
