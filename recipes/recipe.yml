@@ -63,6 +63,7 @@ modules:
         - swayimg
         # --- HARDWARE & DEV ---
         - distrobox
+        - openrgb
         - openrgb-udev-rules
         - steam-devices
         - i2c-tools
