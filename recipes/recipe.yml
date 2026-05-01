@@ -53,6 +53,7 @@ modules:
         - stow
         - eza
         - zoxide
+        - fastfetch
         - fzf
         - bat
         - ripgrep
