@@ -106,9 +106,14 @@ modules:
       - scope: user
 
   - type: script
-    scripts:
-      - set-zsh.sh  # This runs the file from config/scripts/
     snippets:
+      # 1. Update the system default for any NEW users created during install
+      - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
+      # 2. Force change the shell for your existing user in the system database
+      - sed -i 's|/bin/bash$|/usr/bin/zsh|' /etc/passwd
+      # 3. Ensure Zsh is recognized as a valid login shell by the system
+      - grep -q '/usr/bin/zsh' /etc/shells || echo '/usr/bin/zsh' >> /etc/shells
+      
       - "systemctl enable sddm.service"
       - "systemctl enable NetworkManager.service"
       - "systemctl set-default graphical.target"
