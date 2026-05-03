@@ -108,6 +108,8 @@ modules:
       - scope: user
 
   - type: script
+    scripts:
+      - set-zsh.sh  # This runs the file from config/scripts/
     snippets:
       - "systemctl enable sddm.service"
       - "systemctl enable NetworkManager.service"
