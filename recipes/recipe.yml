@@ -12,8 +12,6 @@ modules:
     files:
       - source: system
         destination: /
-      - source: etc/zshrc
-        destination: /etc/zshrc
         
   - type: dnf
     repos:
