@@ -12,7 +12,7 @@ modules:
     files:
       - source: system
         destination: /
-
+        
   - type: dnf
     repos:
       copr:
@@ -50,7 +50,7 @@ modules:
         - jetbrains-mono-fonts-all
         # --- SHELL & UTILS ---
         - zsh
-        - stow
+        - util-linux-user # Needed to change the shell to zsh
         - eza
         - zoxide
         - fastfetch
