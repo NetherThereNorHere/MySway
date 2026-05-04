@@ -38,11 +38,11 @@ modules:
         - solaar
         - steam-devices
 
-        # --- SECURITY
+        # --- SECURITY ---
         - policycoreutils
         - selinux-policy-targeted
 
-        # --- FLATPAK
+        # --- FLATPAK ---
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-wlr
         
@@ -63,7 +63,7 @@ modules:
         - wl-clipboard
         - xorg-x11-server-Xwayland
 
-        # --- TERMINAL
+        # --- TERMINAL ---
         - foot
         - bat
         - dash
@@ -75,14 +75,13 @@ modules:
         - inxi
         - progress
         - ripgrep
-        - starship
         - tldr
         - trash-cli
         - zoxide
         - zsh
         - util-linux-user # Needed to change the shell to zsh
         
-        # --- FONTS
+        # --- FONTS ---
         - jetbrains-mono-fonts-all
 
         # --- UTILS ---
