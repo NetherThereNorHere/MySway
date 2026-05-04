@@ -111,7 +111,6 @@ modules:
     snippets:
       # Set zsh as default shell
       - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
-      - sed -i 's|/bin/bash$|/usr/bin/zsh|' /etc/passwd
       - grep -q '/usr/bin/zsh' /etc/shells || echo '/usr/bin/zsh' >> /etc/shells
       
       - "systemctl enable sddm.service"
