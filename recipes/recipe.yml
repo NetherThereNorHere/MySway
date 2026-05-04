@@ -113,6 +113,10 @@ modules:
       - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
       - grep -q '/usr/bin/zsh' /etc/shells || echo '/usr/bin/zsh' >> /etc/shells
       
+      # Append a loader to the end of the system-wide zshrc
+      - |
+      printf "\n# Load custom BlueBuild configs\nif [ -d /etc/zsh/zshrc.d ]; then\n  for i in /etc/zsh/zshrc.d/*.zsh; do\n    source \$i\n  done\nfi\n" >> /etc/zshrc
+      
       - "systemctl enable sddm.service"
       - "systemctl enable NetworkManager.service"
       - "systemctl set-default graphical.target"
