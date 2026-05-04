@@ -24,12 +24,10 @@ modules:
         - mesa-va-drivers
         - mesa-vulkan-drivers
         - vulkan-loader
-        
         # --- SOUND ---
         - pipewire
         - pipewire-pulseaudio
         - wireplumber
-
         # --- HARDWARE ---
         - i2c-tools
         - NetworkManager
@@ -37,19 +35,15 @@ modules:
         - openrgb-udev-rules
         - solaar
         - steam-devices
-
         # --- SECURITY ---
         - policycoreutils
         - selinux-policy-targeted
-
         # --- FLATPAK ---
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-wlr
-        
         # --- DISPLAY MANAGER ---
         - sddm
         - sddm-wayland-sway
-        
         # --- WINDOW MANAGER ---
         - sway
         - fuzzel
@@ -62,7 +56,6 @@ modules:
         - swayosd
         - wl-clipboard
         - xorg-x11-server-Xwayland
-
         # --- TERMINAL ---
         - foot
         - bat
@@ -75,15 +68,14 @@ modules:
         - inxi
         - progress
         - ripgrep
+        - starship
         - tldr
         - trash-cli
         - zoxide
         - zsh
         - util-linux-user # Needed to change the shell to zsh
-        
         # --- FONTS ---
         - jetbrains-mono-fonts-all
-
         # --- UTILS ---
         - aria2
         - bc
@@ -98,8 +90,7 @@ modules:
         - unzip
         - usbutils
         - wev
-        - wordgrinder
-        
+        - wordgrinder 
     remove:
       packages:
         - firefox
