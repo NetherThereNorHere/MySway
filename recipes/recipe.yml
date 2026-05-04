@@ -19,75 +19,88 @@ modules:
         - erikreider/swayosd
     install:
       packages:
-        # --- SYSTEM FOUNDATION ---
+        # --- GRAPHICS ---
         - libva-utils
         - mesa-dri-drivers
+        - mesa-va-drivers
         - mesa-vulkan-drivers
         - vulkan-loader
-        - mesa-va-drivers
         
-        - NetworkManager
+        # --- SOUND ---
         - pipewire
-        - policycoreutils
         - pipewire-pulseaudio
-        - selinux-policy-targeted
         - wireplumber
+
+        # --- HARDWARE ---
+        - i2c-tools
+        - NetworkManager
+        - openrgb
+        - openrgb-udev-rules
+        - solaar
+        - steam-devices
+
+        # --- SECURITY
+        - policycoreutils
+        - selinux-policy-targeted
+
+        # --- FLATPAK
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-wlr
-        - xorg-x11-server-Xwayland
-        # --- DESKTOP & UI ---
+        
+        # --- DISPLAY MANAGER ---
         - sddm
         - sddm-wayland-sway
+        
+        # --- WINDOW MANAGER ---
         - sway
-        - foot
         - fuzzel
+        - jq
+        - mako
         - py3status
         - swaybg
         - swayidle
         - swaylock
-        - mako
         - swayosd
-        - jetbrains-mono-fonts-all
-        # --- SHELL & UTILS ---
-        - zsh
-        - util-linux-user # Needed to change the shell to zsh
-        - eza
-        - zoxide
-        - fastfetch
-        - fzf
+        - wl-clipboard
+        - xorg-x11-server-Xwayland
+
+        # --- TERMINAL
+        - foot
         - bat
-        - ripgrep
-        - fd-find
-        - jq
-        - htop
-        # --- GRAPHICS & MEDIA ---
-        - mpv
-        - swayimg
-        # --- HARDWARE & DEV ---
-        - distrobox
-        - openrgb
-        - openrgb-udev-rules
-        - steam-devices
-        - i2c-tools
-        - solaar
-        # --- MISC UTILS ---
-        - aria2
-        - bc
         - dash
+        - eza
+        - fastfetch
+        - fd-find
         - file
-        - gdisk
+        - fzf
         - inxi
-        - mupdf
-        - nmap
         - progress
+        - ripgrep
         - tldr
         - trash-cli
+        - zoxide
+        - zsh
+        - util-linux-user # Needed to change the shell to zsh
+        
+        # --- FONTS
+        - jetbrains-mono-fonts-all
+
+        # --- UTILS ---
+        - aria2
+        - bc
+        - distrobox
+        - gdisk
+        - htop
+        - mpv
+        - mupdf
+        - nmap
+        - swayimg
         - unar
         - unzip
         - usbutils
         - wev
-        - wl-clipboard
         - wordgrinder
+        
     remove:
       packages:
         - firefox
@@ -107,11 +120,9 @@ modules:
 
   - type: script
     snippets:
-      # 1. Update the system default for any NEW users created during install
+      # Set zsh as default shell
       - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
-      # 2. Force change the shell for your existing user in the system database
       - sed -i 's|/bin/bash$|/usr/bin/zsh|' /etc/passwd
-      # 3. Ensure Zsh is recognized as a valid login shell by the system
       - grep -q '/usr/bin/zsh' /etc/shells || echo '/usr/bin/zsh' >> /etc/shells
       
       - "systemctl enable sddm.service"
