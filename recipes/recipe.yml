@@ -75,6 +75,7 @@ modules:
         - inxi
         - progress
         - ripgrep
+        - starship
         - tldr
         - trash-cli
         - zoxide
