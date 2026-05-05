@@ -115,8 +115,8 @@ modules:
       
       # Append a loader to the end of the system-wide zshrc
       - |
-      printf "\n# Load custom BlueBuild configs\nif [ -d /etc/zsh/zshrc.d ]; then\n  for i in /etc/zsh/zshrc.d/*.zsh; do\n    source \$i\n  done\nfi\n" >> /etc/zshrc
-      
+      echo 'for i in /etc/zsh/zshrc.d/*.zsh; do source "$i"; done' >> /etc/zshrc
+
       - "systemctl enable sddm.service"
       - "systemctl enable NetworkManager.service"
       - "systemctl set-default graphical.target"
