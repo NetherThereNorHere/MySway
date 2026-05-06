@@ -15,6 +15,7 @@ modules:
   - type: dnf
     repos:
       copr:
+        - atim/starship
         - erikreider/swayosd
     install:
       packages:
@@ -68,10 +69,13 @@ modules:
         - inxi
         - progress
         - ripgrep
+        - starship
         - tldr
         - trash-cli
         - zoxide
         - zsh
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting
         - util-linux-user # Needed to change the shell to zsh
         # --- FONTS ---
         - jetbrains-mono-fonts-all
