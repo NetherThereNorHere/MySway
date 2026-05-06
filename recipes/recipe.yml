@@ -69,6 +69,7 @@ modules:
         - progress
         - ripgrep
         - tldr
+        - tmux
         - trash-cli
         - zoxide
         - zsh
