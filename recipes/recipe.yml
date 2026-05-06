@@ -13,9 +13,6 @@ modules:
         destination: /
         
   - type: dnf
-    repos:
-      copr:
-        - erikreider/swayosd
     install:
       packages:
         # --- GRAPHICS ---
@@ -53,7 +50,6 @@ modules:
         - swaybg
         - swayidle
         - swaylock
-        - swayosd
         - wl-clipboard
         - xorg-x11-server-Xwayland
         # --- TERMINAL ---
@@ -122,7 +118,6 @@ modules:
       - "systemctl enable sddm.service"
       - "systemctl enable NetworkManager.service"
       - "systemctl set-default graphical.target"
-      - "systemctl enable swayosd-libinput-backend.service"
       - "systemctl --global enable pipewire.socket"
       - "systemctl --global enable wireplumber.service"
  
