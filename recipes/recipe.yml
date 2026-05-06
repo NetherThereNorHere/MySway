@@ -15,7 +15,7 @@ modules:
   - type: dnf
     repos:
       copr:
-        #- atim/starship
+        - atim/starship
         - erikreider/swayosd
     install:
       packages:
@@ -70,7 +70,7 @@ modules:
         - inxi
         - progress
         - ripgrep
-        #- starship
+        - starship
         - tldr
         - trash-cli
         - zoxide
