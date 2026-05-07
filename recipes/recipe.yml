@@ -50,6 +50,7 @@ modules:
         - swaybg
         - swayidle
         - swaylock
+        - wlsunset
         - wl-clipboard
         - xorg-x11-server-Xwayland
         # --- TERMINAL ---
