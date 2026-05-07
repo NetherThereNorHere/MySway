@@ -18,7 +18,20 @@ fi
 
 # Command that applies colors from ~/.config/theme/colors.sh
 apply-theme() {
-    source /etc/zsh/zshrc.d/colors.zsh
-    tmux source-file /etc/tmux.conf
-    echo "Theme applied!"
+    source ~/.config/theme/colors.sh
+
+    if [ -n "$TMUX" ]; then
+        # 1. Define the RAW strings
+        local n_style="fg=${color0},bg=${color3},bold"
+        local i_style="fg=${color0},bg=${color2},bold"
+
+        # 2. Set the "Default" (Insert) style
+        tmux set -g status-left "#[${i_style}] INSERT "
+
+        # 3. Create hooks that swap the bar instantly when the mode changes
+        # No logic, no commas, no escapes, no bold]
+        tmux set-hook -g pane-mode-changed "if-shell -F '#{pane_in_mode}' 'set -g status-left \"#[${n_style}] NORMAL \"' 'set -g status-left \"#[${i_style}] INSERT \"'"
+        
+        tmux refresh-client -S
+    fi
 }
