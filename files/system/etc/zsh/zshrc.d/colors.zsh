@@ -20,3 +20,8 @@ apply-theme() {
         tmux refresh-client -S
     fi
 }
+
+# Automatically apply the theme when you enter a tmux session
+if [[ -n "$TMUX" ]]; then
+    apply-theme
+fi
