@@ -74,8 +74,9 @@ modules:
         - zsh-autosuggestions
         - zsh-syntax-highlighting
         - util-linux-user # Needed to change the shell to zsh
-        # --- FONTS ---
+        # --- FONTS & THEMES ---
         - jetbrains-mono-fonts-all
+        - python3-pywal
         # --- UTILS ---
         - aria2
         - bc
