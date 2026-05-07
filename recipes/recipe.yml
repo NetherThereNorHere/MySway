@@ -13,7 +13,8 @@ modules:
         destination: /
 
   - type: kargs
-    args:
+    arch: x86_64
+    kargs:
       - video=YOUR_CONNECTOR:3440x1440@174.002
       
   - type: dnf
