@@ -76,7 +76,6 @@ modules:
         - util-linux-user # Needed to change the shell to zsh
         # --- FONTS & THEMES ---
         - jetbrains-mono-fonts-all
-        - python3-pywal
         # --- UTILS ---
         - aria2
         - bc
