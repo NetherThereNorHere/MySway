@@ -10,6 +10,7 @@ export THEME_ACCENT=$color4
 
 # Sync these to tmux environment immediately
 if [ -n "$TMUX" ]; then
+    tmux set-environment THEME_FG "$THEME_FG"
     tmux set-environment THEME_BG "$THEME_BG"
     tmux set-environment THEME_NORMAL "$THEME_NORMAL"
     tmux set-environment THEME_INSERT "$THEME_INSERT"
