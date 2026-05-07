@@ -3,9 +3,11 @@ alias ls='eza --icons=always --color=always --group-directories-first'
 
 # Common list view: Long format with headers and human-readable sizes
 alias ll='eza -l --icons=always --header --group-directories-first'
+alias lls='eza -l --total-size --sort=size --icons=always --header --group-directories-first'
 
 # All files: includes hidden files (dotfiles)
 alias la='eza -la --icons=always --header --group-directories-first'
+alias las='eza -la --total-size --sort=size --icons=always --header --group-directories-first'
 
 # Git-aware view: shows file status (modified, new, etc.) in the long list
 alias lg='eza -l --icons=always --git --header'
