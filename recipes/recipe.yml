@@ -11,7 +11,11 @@ modules:
     files:
       - source: system
         destination: /
-        
+
+  - type: kargs
+    args:
+      - video=YOUR_CONNECTOR:3440x1440@174.002
+      
   - type: dnf
     install:
       packages:
