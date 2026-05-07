@@ -43,6 +43,7 @@ modules:
         - sddm-wayland-sway
         # --- WINDOW MANAGER ---
         - sway
+        - brightnessctl
         - fuzzel
         - jq
         - mako
