@@ -15,7 +15,7 @@ modules:
   - type: kargs
     arch: x86_64
     kargs:
-      - video=YOUR_CONNECTOR:3440x1440@174.002
+      - video=DP-1:3440x1440@174.002
       
   - type: dnf
     install:
