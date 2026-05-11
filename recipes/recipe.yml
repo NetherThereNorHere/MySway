@@ -113,6 +113,15 @@ modules:
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       - scope: user
 
+  - type: systemd
+    system:
+      # Specifically disable the default to stop the conflict
+      disabled:
+        - getty@tty1.service
+      # Your autologin version should be here
+      enabled:
+        - getty@tty1.service 
+
   - type: script
     snippets:
       # Set zsh as default shell
