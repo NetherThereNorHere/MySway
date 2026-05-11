@@ -129,6 +129,8 @@ modules:
       # Force AMD driver into initramfs for Early KMS
       - echo 'add_drivers+=" amdgpu "' > /etc/dracut.conf.d/early-kms.conf
 
+      - "echo 'high' > /sys/class/drm/card0/device/power_dpm_force_performance_level"
+
       #- "systemctl enable sddm.service"
       #- "systemctl set-default graphical.target" # Needed for graphical displaymanagers
       - "systemctl set-default multi-user.target" # Needed for TTY autologin
