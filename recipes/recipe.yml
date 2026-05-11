@@ -113,16 +113,11 @@ modules:
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       - scope: user
 
-  #- type: systemd
-  #  system:
-  #    enabled:
-  #      - getty@tty1.service 
-
   - type: script
     snippets:
       # Set zsh as default shell
-      # - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
-      # - grep -q '/usr/bin/zsh' /etc/shells || echo '/usr/bin/zsh' >> /etc/shells
+      - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
+      - grep -q '/usr/bin/zsh' /etc/shells || echo '/usr/bin/zsh' >> /etc/shells
       
       # Append a loader to the end of the system-wide zshrc
       - "echo 'for i in /etc/zsh/zshrc.d/*.zsh; do source \"$i\"; done' >> /etc/zshrc"
