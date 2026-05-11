@@ -122,7 +122,7 @@ modules:
       # Append a loader to the end of the system-wide zshrc
       - "echo 'for i in /etc/zsh/zshrc.d/*.zsh; do source \"$i\"; done' >> /etc/zshrc"
       
-      - "systemctl enable sddm.service"
+      # - "systemctl enable sddm.service"
       - "systemctl enable NetworkManager.service"
       - "systemctl set-default graphical.target"
       - "systemctl --global enable pipewire.socket"
