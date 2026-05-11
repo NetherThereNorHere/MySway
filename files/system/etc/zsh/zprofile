@@ -1,3 +1,0 @@
-if [[ -z "$DISPLAY" && $(tty) =~ "tty1" ]]; then
-    exec sway
-fi
