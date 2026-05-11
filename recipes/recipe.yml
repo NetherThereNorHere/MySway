@@ -17,6 +17,8 @@ modules:
     kargs:
       - loglevel=3
       - amdgpu.modeset=1
+      - amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
+      - amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
       - video=DP-1:3440x1440@174.002
       
   - type: dnf
