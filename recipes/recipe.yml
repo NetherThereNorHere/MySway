@@ -44,8 +44,8 @@ modules:
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-wlr
         # --- DISPLAY MANAGER ---
-        - sddm
-        - sddm-wayland-sway
+        # - sddm
+        # - sddm-wayland-sway
         # --- WINDOW MANAGER ---
         - sway
         - brightnessctl
