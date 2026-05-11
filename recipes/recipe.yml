@@ -128,7 +128,7 @@ modules:
       - echo 'add_drivers+=" amdgpu "' > /etc/dracut.conf.d/early-kms.conf
 
       #- "systemctl enable sddm.service"
-      - "systemctl set-default graphical.target" # Needed for graphical displaymanagers
+      #- "systemctl set-default graphical.target" # Needed for graphical displaymanagers
       - "systemctl set-default multi-user.target" # Needed for TTY autologin
       - "systemctl enable NetworkManager.service"
       - "systemctl --global enable pipewire.socket"
