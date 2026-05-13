@@ -19,7 +19,7 @@ modules:
       - amdgpu.modeset=1
       - amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
       - amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
-      - video=DP-1:3440x1440@119.961
+      # - video=DP-1:3440x1440@119.961
       
   - type: dnf
     install:
