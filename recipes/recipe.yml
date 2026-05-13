@@ -118,6 +118,9 @@ modules:
       - scope: user
 
   - type: script
+    scripts:
+      - setup-sway.sh
+      
     snippets:
       # Set zsh as default shell
       - sed -i 's/SHELL=\/bin\/bash/SHELL=\/usr\/bin\/zsh/' /etc/default/useradd
