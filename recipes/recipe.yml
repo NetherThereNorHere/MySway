@@ -19,8 +19,8 @@ modules:
       - amdgpu.modeset=1
       - amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
       - amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
-      # - video=DP-1:3440x1440@119.961
-      
+      - video=DP-1:3440x1440@174.002
+
   - type: dnf
     install:
       packages:
@@ -108,6 +108,7 @@ modules:
   - type: default-flatpaks
     configurations:
       - scope: system
+        notify: false
         install:
           - com.github.Matoking.protontricks
           - com.github.tchx84.Flatseal
@@ -116,6 +117,7 @@ modules:
           - com.valvesoftware.Steam
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       - scope: user
+        notify: false
 
   - type: script
     scripts:
