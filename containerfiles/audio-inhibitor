@@ -1,0 +1,11 @@
+# --- STAGE 1: Isolated Rust Build Environment ---
+FROM fedora:latest AS builder
+RUN dnf install -y git cargo clang-devel libxkbcommon-devel pipewire-devel systemd-devel wayland-devel
+RUN git clone https://github.com /tmp/build
+WORKDIR /tmp/build
+RUN cargo build --release
+
+# --- STAGE 2: Seamlessly Inject Into Your Image ---
+FROM $BASE_IMAGE AS final
+COPY --from=builder /tmp/build/target/release/wayland-pipewire-idle-inhibit /usr/bin/wayland-pipewire-idle-inhibit
+RUN chmod +x /usr/bin/wayland-pipewire-idle-inhibit
