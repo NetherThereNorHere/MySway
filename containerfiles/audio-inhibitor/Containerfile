@@ -1,7 +1,7 @@
 # --- STAGE 1: Isolated Rust Build Environment ---
 FROM fedora:latest AS builder
 RUN dnf install -y git cargo clang-devel libxkbcommon-devel pipewire-devel systemd-devel wayland-devel
-RUN git clone https://github.com /tmp/build
+RUN git clone https://github.com/rafaelrc7/wayland-pipewire-idle-inhibit /tmp/build
 WORKDIR /tmp/build
 RUN cargo build --release
 
