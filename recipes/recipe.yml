@@ -121,7 +121,7 @@ modules:
 
   - type: containerfile
     containerfiles:
-    - audio-inhibit
+    - audio-inhibitor
 
   - type: script
     scripts:
