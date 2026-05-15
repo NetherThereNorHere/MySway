@@ -120,7 +120,8 @@ modules:
         notify: false
 
   - type: containerfile
-    file: config/containerfiles/wayland-pipewire-idle-inhibit
+    containerfiles:
+    - audio-inhibit
 
   - type: script
     scripts:
