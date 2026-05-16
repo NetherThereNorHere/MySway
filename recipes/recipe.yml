@@ -119,9 +119,9 @@ modules:
       - scope: user
         notify: false
 
-  #- type: containerfile
-  #  containerfiles:
-  #    - audio-inhibitor
+  - type: containerfile
+    containerfiles:
+      - audio-inhibitor
 
   - type: script
     scripts:
