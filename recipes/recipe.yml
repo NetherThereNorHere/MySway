@@ -119,13 +119,10 @@ modules:
       - scope: user
         notify: false
 
-  #- type: containerfile
-  #  containerfiles:
-  #    - audio-inhibitor
-
   - type: script
     scripts:
       - setup-sway.sh
+      - install-inhibitor.sh
       
     snippets:
       # Set zsh as default shell
