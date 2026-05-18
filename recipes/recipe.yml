@@ -122,7 +122,7 @@ modules:
   - type: script
     scripts:
       - setup-sway.sh
-      - install-inhibitor.sh
+      #- install-inhibitor.sh
       
     snippets:
       # Set zsh as default shell
