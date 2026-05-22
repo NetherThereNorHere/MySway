@@ -54,6 +54,7 @@ modules:
         - sway
         - brightnessctl
         - fuzzel
+        - python-i3ipc
         - jq
         - mako
         - py3status
