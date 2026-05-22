@@ -88,6 +88,7 @@ modules:
         # --- UTILS ---
         - aria2
         - bc
+        - btop
         - distrobox
         - gdisk
         - htop
