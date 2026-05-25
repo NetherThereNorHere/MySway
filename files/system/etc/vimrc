@@ -1,0 +1,3 @@
+" --- Wayland Pure-Memory Clipboard Bridge ---
+xnoremap <silent> <C-c> y:call system('wl-copy', @@)<CR>gV
+nnoremap <silent> <C-v> :call append(line('.'), split(system('wl-paste --no-newline'), "\n"))<CR>
