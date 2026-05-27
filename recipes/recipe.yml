@@ -63,6 +63,7 @@ modules:
         - swaylock
         - wlsunset
         - wl-clipboard
+        - wob
         - xorg-x11-server-Xwayland
         # --- TERMINAL ---
         - foot
@@ -125,7 +126,6 @@ modules:
   - type: script
     scripts:
       - setup-sway.sh
-      #- install-inhibitor.sh
       
     snippets:
       # Set zsh as default shell
