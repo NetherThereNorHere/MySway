@@ -101,6 +101,7 @@ modules:
         - unzip
         - usbutils
         - wev
+        - wiremix
         - wordgrinder 
     remove:
       packages:
