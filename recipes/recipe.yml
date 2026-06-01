@@ -23,6 +23,7 @@ modules:
       
       - systemd.unit=multi-user.target
       - video=DP-1:3440x1440@174.002
+      - consoleblank=60
       - grub.timeout=0
       - grub.timeout_style=hidden
 
