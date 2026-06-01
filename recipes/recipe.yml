@@ -52,9 +52,6 @@ modules:
         # --- FLATPAK ---
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-wlr
-        # --- DISPLAY MANAGER ---
-        # - sddm
-        # - sddm-wayland-sway
         # --- WINDOW MANAGER ---
         - sway
         - brightnessctl
@@ -156,8 +153,8 @@ modules:
       - echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" > /etc/tmpfiles.d/cursor_blink.conf
 
       # Forces the underlying GRUB templates to run completely silently
-      - sed -i 's/quiet_boot="0"/quiet_boot="1"/' /etc/grub.d/10_linux
-      - sed -i 's/echo "$(echo "Booting /true "/' /etc/grub.d/10_linux
+      #- sed -i 's/quiet_boot="0"/quiet_boot="1"/' /etc/grub.d/10_linux
+      #- sed -i 's/echo "$(echo "Booting /true "/' /etc/grub.d/10_linux
 
       # Force wayland in flatpak
       #- flatpak override --global --env=ELECTRON_OZONE_PLATFORM_HINT=wayland com.brave.Browser
