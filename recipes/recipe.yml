@@ -18,8 +18,10 @@ modules:
       - loglevel=3
       #- amdgpu.modeset=1
       #- amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
-      - amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
+      #- amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
       - fbcon=nodefer            # Disables flashing cursor in tty
+      - vt.global_cursor_default=0
+      - systemd.unit=multi-user.target
       - video=DP-1:3440x1440@174.002
 
   - type: dnf
