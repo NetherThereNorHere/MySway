@@ -150,6 +150,9 @@ modules:
       # Force AMD driver into initramfs for Early KMS
       - echo 'add_drivers+=" amdgpu "' > /etc/dracut.conf.d/early-kms.conf
 
+      # Completely blocks the Linux framebuffer from cycling the text cursor status
+      - echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" > /etc/tmpfiles.d/cursor_blink.conf
+
       # Force wayland in flatpak
       #- flatpak override --global --env=ELECTRON_OZONE_PLATFORM_HINT=wayland com.brave.Browser
 
