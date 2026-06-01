@@ -16,13 +16,15 @@ modules:
     arch: x86_64
     kargs:
       - loglevel=3
-      #- amdgpu.modeset=1
-      #- amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
-      #- amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
-      - fbcon=nodefer            # Disables flashing cursor in tty
+      
+      # Disables flashing cursor in tty
+      - fbcon=nodefer
       - vt.global_cursor_default=0
+      
       - systemd.unit=multi-user.target
       - video=DP-1:3440x1440@174.002
+      - grub.timeout=0
+      - grub.timeout_style=hidden
 
   - type: dnf
     install:
