@@ -16,8 +16,8 @@ modules:
     arch: x86_64
     kargs:
       - loglevel=3
-      - amdgpu.modeset=1
-      - amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
+      #- amdgpu.modeset=1
+      #- amdgpu.sg_display=0      # Disables Scatter/Gather which causes TTY flickers
       - amdgpu.dcdebugmask=0x410 # Disables both PSR and Panel Replay
       - fbcon=nodefer            # Disables flashing cursor in tty
       - video=DP-1:3440x1440@174.002
@@ -124,6 +124,15 @@ modules:
       - scope: user
         notify: false
 
+  - type: systemd
+    system:
+      enabled:
+        - NetworkManager.service
+    user:
+      enabled:
+        - pipewire.socket
+        - wireplumber.service
+
   - type: script
     scripts:
       - setup-sway.sh
@@ -141,15 +150,6 @@ modules:
 
       # Force wayland in flatpak
       #- flatpak override --global --env=ELECTRON_OZONE_PLATFORM_HINT=wayland com.brave.Browser
-
-      #- "echo 'high' > /sys/class/drm/card0/device/power_dpm_force_performance_level"
-
-      #- "systemctl enable sddm.service"
-      #- "systemctl set-default graphical.target" # Needed for graphical displaymanagers
-      - "systemctl set-default multi-user.target" # Needed for TTY autologin
-      - "systemctl enable NetworkManager.service"
-      - "systemctl --global enable pipewire.socket"
-      - "systemctl --global enable wireplumber.service"
 
   - type: initramfs
  
