@@ -152,6 +152,5 @@ modules:
       - "systemctl --global enable wireplumber.service"
 
   - type: initramfs
-    enable: true
  
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
