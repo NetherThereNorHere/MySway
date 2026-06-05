@@ -55,7 +55,6 @@ modules:
         - xdg-desktop-portal-wlr
         # --- WINDOW MANAGER ---
         - sway
-        - niri
         - brightnessctl
         - fuzzel
         - python-i3ipc
