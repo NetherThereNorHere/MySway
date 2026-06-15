@@ -100,7 +100,6 @@ modules:
         - mpv
         - mupdf
         - nmap
-        - qutebrowser
         - swayimg
         - unar
         - unzip
