@@ -147,9 +147,6 @@ modules:
       # Append a loader to the end of the system-wide zshrc 
       - "echo 'for i in /etc/zsh/zshrc.d/*.zsh; do source \"$i\"; done' >> /etc/zshrc"
 
-      # Fix permissions for swaybg_server.py
-      - chmod +x /usr/bin/swaybg_server.py
-
       # Forces Dracut to bundle the amdgpu driver AND activate your custom screen blanking module
       - echo -e 'add_drivers+=" amdgpu "\nadd_dracutmodules+=" plymouth-blank "' > /etc/dracut.conf.d/early-kms.conf
 
