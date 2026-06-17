@@ -1,12 +1,16 @@
-[Unit]
+ini[Unit]
 Description=Swaybg Browser Focus Stacking Server
+# Ensures it binds correctly to the actual Wayland window manager lifecycle
 After=sway-session.target
+BindsTo=sway-session.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/swaybg_server.py
+# Crucial: This forces systemd to load your native Wayland session variables 
+Environment=WAYLAND_DISPLAY=wayland-1
+ExecStart=/usr/bin/env python3 %h/.local/bin/swaybg_server.py
 Restart=always
 RestartSec=3
 
 [Install]
-WantedBy=default.target
+WantedBy=sway-session.target
