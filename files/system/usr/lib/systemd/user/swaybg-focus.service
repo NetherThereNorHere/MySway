@@ -1,11 +1,10 @@
-ini[Unit]
+[Unit]
 Description=Swaybg Browser Focus Stacking Server
 After=sway-session.target
 BindsTo=sway-session.target
 
 [Service]
 Type=simple
-Environment=WAYLAND_DISPLAY=wayland-1
 ExecStart=/usr/bin/env python3 %h/.local/bin/swaybg_server.py
 Restart=always
 RestartSec=3
