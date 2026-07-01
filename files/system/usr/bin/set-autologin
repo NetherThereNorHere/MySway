@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Ensure the script is run with root privileges
+if [[ $EUID -ne 0 ]]; then
+   echo "❌ This command must be run with sudo." 
+   exit 1
+fi
+
+TARGET_USER="$1"
+
+# Check if a username was passed as an argument
+if [[ -z "$TARGET_USER" ]]; then
+    echo "🔧 Usage: sudo set-autologin <username>"
+    exit 1
+fi
+
+# Validation: Ensure the user actually exists on this atomic deployment
+if ! id "$TARGET_USER" &>/dev/null; then
+    echo "❌ Error: User '$TARGET_USER' does not exist on this system."
+    exit 1
+fi
+
+CONF_DIR="/etc/systemd/system/getty@tty1.service.d"
+CONF_FILE="$CONF_DIR/autologin.conf"
+TMPFILE_CONF="/etc/tmpfiles.d/autologin-flag.conf"
+FLAG_FILE="/run/do_autologin"
+
+# Safely create target system structures if they don't exist
+mkdir -p "$CONF_DIR"
+mkdir -p "$(dirname "$TMPFILE_CONF")"
+
+# Write the Systemd Override File
+cat <<EOF > "$CONF_FILE"
+[Unit]
+StartLimitIntervalSec=10
+StartLimitBurst=5
+
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/bash -c 'if [ -f "$FLAG_FILE" ]; then rm -f "$FLAG_FILE"; exec /usr/sbin/agetty --autologin "$TARGET_USER" --noclear --noissue --skip-login %I \$TERM; else exec /usr/sbin/agetty --noclear --noissue %I \$TERM; fi'
+Restart=always
+EOF
+
+# Configure the One-Time Flag via tmpfiles.d
+echo "f $FLAG_FILE 0600 root root -" > "$TMPFILE_CONF"
+
+# Arm the flag file immediately for this session
+touch "$FLAG_FILE"
+chmod 0600 "$FLAG_FILE"
+
+# Trigger systemd to notice the new configuration
+systemctl daemon-reload
+
+echo "✅ Success: Custom one-time autologin configured for '$TARGET_USER'."
+echo "🔄 Changes will trigger on your next boot or TTY restart."
