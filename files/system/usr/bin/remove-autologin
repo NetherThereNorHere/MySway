@@ -1,0 +1,27 @@
+#!/bin/bash
+
+CONF_DIR="/etc/systemd/system/getty@tty1.service.d"
+CONF_FILE="$CONF_DIR/autologin.conf"
+
+# 1. File Removal Confirmation
+if [[ -f "$CONF_FILE" ]]; then
+    read -p "🗑️  Are you sure you want to delete the autologin config? (y/n): " del_res
+    if [[ "$del_res" =~ ^[Yy]$ ]]; then
+        rm "$CONF_FILE"
+        echo "✅ Deleted $CONF_FILE"
+    else
+        echo "❌ Deletion cancelled."
+        exit 0
+    fi
+else
+    echo "ℹ️  No autologin file found at $CONF_FILE."
+fi
+
+# 2. Cleanup Confirmation
+if [[ -d "$CONF_DIR" ]] && [ -z "$(ls -A "$CONF_DIR")" ]; then
+    read -p "📁 Directory is now empty. Remove the empty folders? (y/n): " rm_dir_res
+    if [[ "$rm_dir_res" =~ ^[Yy]$ ]]; then
+        rmdir -p "$CONF_DIR" 2>/dev/null || true
+        echo "✅ Folders cleaned up."
+    fi
+fi
