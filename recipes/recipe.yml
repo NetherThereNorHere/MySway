@@ -153,6 +153,9 @@ modules:
       # Completely blocks the Linux framebuffer from cycling the text cursor status
       - echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" > /etc/tmpfiles.d/cursor_blink.conf
 
+      # Set permissons of user scripts
+      - "chmod +x /usr/bin/set-autologin"
+      
       # Forces the underlying GRUB templates to run completely silently
       #- sed -i 's/quiet_boot="0"/quiet_boot="1"/' /etc/grub.d/10_linux
       #- sed -i 's/echo "$(echo "Booting /true "/' /etc/grub.d/10_linux
