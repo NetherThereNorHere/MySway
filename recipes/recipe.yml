@@ -155,6 +155,7 @@ modules:
 
       # Set permissons of user scripts
       - "chmod +x /usr/bin/set-autologin"
+      - "chmod +x /usr/bin/remove-autologin"
       
       # Forces the underlying GRUB templates to run completely silently
       #- sed -i 's/quiet_boot="0"/quiet_boot="1"/' /etc/grub.d/10_linux
