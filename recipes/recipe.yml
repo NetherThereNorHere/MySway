@@ -141,6 +141,7 @@ modules:
   - type: script
     scripts:
       - setup-sway.sh
+      - install-yazi.sh
       
     snippets:
       # Set zsh as default shell
