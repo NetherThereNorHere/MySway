@@ -106,6 +106,7 @@ modules:
         - unar
         - unzip
         - usbutils
+        - vifm
         - wev
         - wiremix
         - wordgrinder 
