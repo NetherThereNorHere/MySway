@@ -91,6 +91,8 @@ modules:
         - zsh-syntax-highlighting
         - util-linux-user # Needed to change the shell to zsh
         # --- FONTS & THEMES ---
+        - google-noto-emoji-fonts
+        - fira-code-fonts
         - jetbrains-mono-fonts-all
         # --- UTILS ---
         - aria2
