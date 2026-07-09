@@ -85,6 +85,7 @@ modules:
         - ripgrep
         - tldr
         - trash-cli
+        - vim-enhanced
         - zoxide
         - zsh
         - zsh-autosuggestions
