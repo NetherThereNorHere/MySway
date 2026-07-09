@@ -13,7 +13,7 @@ rm -rf yazi-temp yazi-x86_64-unknown-linux-gnu.zip
 # Get symbol icons for Yazi
 echo "Fetching latest Symbols Only Nerd Font release..."
 
-curl -L -O https://github.com
+curl -L -O https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip
 
 mkdir -p /usr/share/fonts/nerd-fonts-symbols
 
