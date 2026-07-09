@@ -81,11 +81,11 @@ modules:
         - file
         - fzf
         - inxi
+        - neovim
         - progress
         - ripgrep
         - tldr
         - trash-cli
-        - vim-enhanced
         - zoxide
         - zsh
         - zsh-autosuggestions
