@@ -110,11 +110,7 @@ modules:
         - usbutils
         - wev
         - wiremix
-        - wordgrinder 
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
+        - wordgrinder
 
   - type: default-flatpaks
     configurations:
