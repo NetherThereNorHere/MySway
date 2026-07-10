@@ -138,6 +138,7 @@ modules:
   - type: script
     scripts:
       - setup-sway.sh
+      - hardened-firefox.sh
       - install-yazi.sh
       
     snippets:
