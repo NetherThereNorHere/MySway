@@ -1,4 +1,4 @@
-alias b='bashmount'
+alias b='bashmount && clear'
 alias bc='bc --interactive --mathlib'
 alias update='sudo bootc upgrade'
 alias v='nvim'
