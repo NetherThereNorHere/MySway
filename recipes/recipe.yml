@@ -155,8 +155,8 @@ modules:
       - echo "w /sys/class/graphics/fbcon/cursor_blink - - - - 0" > /etc/tmpfiles.d/cursor_blink.conf
 
       # Set permissons of user scripts
-      - "chmod +x /usr/bin/set-autologin"
-      - "chmod +x /usr/bin/remove-autologin"
+      - "chmod +x /usr/bin/admin-autologin-set"
+      - "chmod +x /usr/bin/admin-autologin-remove"
       
       # Forces the underlying GRUB templates to run completely silently
       #- sed -i 's/quiet_boot="0"/quiet_boot="1"/' /etc/grub.d/10_linux
