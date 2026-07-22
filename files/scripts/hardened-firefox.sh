@@ -3,7 +3,7 @@ set -euo pipefail
 
 # --- CONFIGURATION: PINNED VERSIONS & CHECKSUMS ---
 # Arkenfox user.js v126.0 (Example: Replace with latest stable tag)
-ARKENFOX_VERSION="v126.0"
+ARKENFOX_VERSION="v144.0"
 # You MUST get the actual SHA256 for the user.js file from the release page:
 # https://github.com/arkenfox/user.js/releases/tag/v126.0
 # Click the file, then click "Raw", then check the commit hash or use a release asset if available.
