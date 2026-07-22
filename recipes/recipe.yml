@@ -139,6 +139,7 @@ modules:
     scripts:
       - setup-sway.sh
       - install-yazi.sh
+      - hardened-firefox.sh
       
     snippets:
       # Set zsh as default shell
