@@ -2,18 +2,10 @@
 set -euo pipefail
 
 # --- CONFIGURATION: PINNED VERSIONS & CHECKSUMS ---
-# Yazi v26.5.6 (Released May 2026)
 YAZI_VERSION="v26.5.6"
-YAZI_SHA="797abc8965c07d903f3cd263512fe4114b2fc36f03fc62011300787f28a48f1e" 
-# ^ Note: Verify this hash matches the asset on the v26.5.6 release page before building.
-# If the hash above is a placeholder, fetch the real one from:
-# https://github.com/sxyazi/yazi/releases/tag/v26.5.6
+YAZI_SHA="6c6c52a4b2648e179f917bdaa7c57e793d18561b380a8bfa025f10cd1b9b2ad1" 
 
-# Nerd Fonts v3.4.0 (Released April 2025)
 NERD_VERSION="v3.4.0"
-# SHA256 for NerdFontsSymbolsOnly.zip v3.4.0
-# You MUST verify this hash from the release page: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
-# Example placeholder (Replace with actual hash from release assets):
 NERD_SHA="8e617904b980fe3648a4b116808788fe50c99d2d495376cb7c0badbd8a564c47" 
 
 # --------------------------------------------------
@@ -31,15 +23,13 @@ if [ $? -ne 0 ]; then
 fi
 
 # Extract and Install
-# Note: Newer Yazi zips extract to a directory named after the arch, e.g., yazi-x86_64-unknown-linux-gnu/
-unzip -q yazi.zip
-# Find the extracted directory (usually matches the zip content)
-YAZI_DIR=$(unzip -l yazi.zip | awk 'NR==4 {print $4}' | cut -d'/' -f1)
-mv "${YAZI_DIR}/yazi" /usr/bin/
-mv "${YAZI_DIR}/ya" /usr/bin/
+unzip -q yazi.zip -d yazi-temp
+
+mv yazi-temp/*/yazi /usr/bin/
+mv yazi-temp/*/ya /usr/bin/
 
 # Cleanup
-rm -rf "${YAZI_DIR}" yazi.zip
+rm -rf yazi-temp yazi.zip
 
 # Record Version for Update Checker
 echo "${YAZI_VERSION}" > /etc/yazi-version
