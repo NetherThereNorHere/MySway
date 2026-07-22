@@ -14,7 +14,7 @@ NERD_VERSION="v3.4.0"
 # SHA256 for NerdFontsSymbolsOnly.zip v3.4.0
 # You MUST verify this hash from the release page: https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
 # Example placeholder (Replace with actual hash from release assets):
-NERD_SHA="PUT_ACTUAL_SHA256_HERE" 
+NERD_SHA="8e617904b980fe3648a4b116808788fe50c99d2d495376cb7c0badbd8a564c47" 
 
 # --------------------------------------------------
 
