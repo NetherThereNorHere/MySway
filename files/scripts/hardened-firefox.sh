@@ -2,25 +2,15 @@
 set -euo pipefail
 
 # --- CONFIGURATION: PINNED VERSIONS & CHECKSUMS ---
-# Arkenfox user.js v126.0 (Example: Replace with latest stable tag)
 ARKENFOX_VERSION="v144.0"
-# You MUST get the actual SHA256 for the user.js file from the release page:
-# https://github.com/arkenfox/user.js/releases/tag/v126.0
-# Click the file, then click "Raw", then check the commit hash or use a release asset if available.
-# Since arkenfox often doesn't provide SHA256 for the single file in releases, 
-# we verify the Git Commit Hash instead for the 'master' branch at a specific point.
-ARKENFOX_COMMIT="PUT_SPECIFIC_COMMIT_HASH_HERE" 
-# Alternative: If using a release tag that has a zip asset, use the zip's SHA256.
-# For this example, we will download the specific tag's user.js and verify its content hash.
-EXPECTED_USERJS_SHA="PUT_SHA256_OF_RAW_USERJS_FILE_HERE"
+
+EXPECTED_USERJS_SHA="e4ab33c6914899175cf7035e0e57a2d7f08ac887d8f957f1199e7e49bbe7e33e"
 
 # --------------------------------------------------
 
 echo "=== Hardening Firefox with Arkenfox ${ARKENFOX_VERSION} ==="
 
-# 1. Download arkenfox user.js (Pinned to specific tag/commit)
 echo "Downloading arkenfox user.js..."
-# Option A: Download by Tag (Recommended if release exists)
 curl -L -o /tmp/user.js "https://raw.githubusercontent.com/arkenfox/user.js/${ARKENFOX_VERSION}/user.js"
 
 # Verify Checksum
