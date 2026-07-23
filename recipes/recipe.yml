@@ -91,9 +91,6 @@ modules:
         - zsh-autosuggestions
         - zsh-syntax-highlighting
         - util-linux-user # Needed to change the shell to zsh
-        # --- FONTS & THEMES ---
-        # - fira-code-fonts
-        # - jetbrains-mono-fonts-all
         # --- UTILS ---
         - aria2
         - bc
