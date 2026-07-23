@@ -92,8 +92,8 @@ modules:
         - zsh-syntax-highlighting
         - util-linux-user # Needed to change the shell to zsh
         # --- FONTS & THEMES ---
-        - fira-code-fonts
-        - jetbrains-mono-fonts-all
+        # - fira-code-fonts
+        # - jetbrains-mono-fonts-all
         # --- UTILS ---
         - aria2
         - bc
@@ -125,6 +125,16 @@ modules:
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       - scope: user
         notify: false
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+      - JetBrainsMono
+      - NerdFontsSymbolsOnly
+      google-fonts:
+      - Roboto
+      - Open Sans
+      - Inter
 
   - type: systemd
     system:
