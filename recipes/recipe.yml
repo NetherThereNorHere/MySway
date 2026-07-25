@@ -117,7 +117,6 @@ modules:
           - com.github.Matoking.protontricks
           - com.github.tchx84.Flatseal
           - io.github.wivrn.wivrn
-          - io.gitlab.librewolf-community
           - com.valvesoftware.Steam
           - com.valvesoftware.Steam.CompatibilityTool.Proton-GE
       - scope: user
