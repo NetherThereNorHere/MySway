@@ -109,6 +109,13 @@ modules:
         - wiremix
         - wordgrinder
 
+  - type: brew
+    # Optional: List specific packages to install immediately
+    install:
+      - yazi
+      # - ffmpeg
+      # - ripgrep   
+
   - type: default-flatpaks
     configurations:
       - scope: system
@@ -144,7 +151,7 @@ modules:
   - type: script
     scripts:
       - setup-sway.sh
-      - install-yazi.sh
+      # - install-yazi.sh
       - hardened-firefox.sh
       
     snippets:
