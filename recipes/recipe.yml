@@ -110,11 +110,8 @@ modules:
         - wordgrinder
 
   - type: brew
-    # Optional: List specific packages to install immediately
-    install:
-      - yazi
-      # - ffmpeg
-      # - ripgrep   
+    brew-analytics: false
+    auto-update: true
 
   - type: default-flatpaks
     configurations:
