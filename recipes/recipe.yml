@@ -86,7 +86,6 @@ modules:
         - neovim
         - poppler-utils
         - progress
-        - resvg
         - ripgrep
         - tldr
         - trash-cli
