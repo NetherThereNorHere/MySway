@@ -30,7 +30,8 @@ modules:
   - type: dnf
     repos:
       copr:
-        - name: justkidding/ueberzugpp
+        enable:
+          - justkidding/ueberzugpp
     install:
       packages:
         # --- GRAPHICS ---
