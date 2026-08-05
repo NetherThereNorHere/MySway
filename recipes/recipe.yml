@@ -89,7 +89,6 @@ modules:
         - ripgrep
         - tldr
         - trash-cli
-        - ueberzugpp
         - zoxide
         - zsh
         - zsh-autosuggestions
