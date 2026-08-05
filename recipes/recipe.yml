@@ -70,6 +70,7 @@ modules:
         - xorg-x11-server-Xwayland
         # --- TERMINAL ---
         - foot
+        - 7zip
         - bashmount
         - bat
         - chafa
@@ -80,9 +81,12 @@ modules:
         - ffmpegthumbnailer
         - file
         - fzf
+        - ImageMagick
         - inxi
         - neovim
+        - poppler-utils
         - progress
+        - resvg
         - ripgrep
         - tldr
         - trash-cli
