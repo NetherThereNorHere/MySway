@@ -28,10 +28,6 @@ modules:
       - grub.timeout_style=hidden
 
   - type: dnf
-    repos:
-      copr:
-        enable:
-          - justkidding/ueberzugpp
     install:
       packages:
         # --- GRAPHICS ---
@@ -93,7 +89,6 @@ modules:
         - ripgrep
         - tldr
         - trash-cli
-        - ueberzugpp
         - zoxide
         - zsh
         - zsh-autosuggestions
