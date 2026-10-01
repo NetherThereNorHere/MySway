@@ -71,6 +71,7 @@ modules:
         # --- TERMINAL ---
         - foot
         - 7zip
+        - 7zip-standalone-all
         - bashmount
         - bat
         - chafa
