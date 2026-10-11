@@ -31,7 +31,6 @@ modules:
     install:
       packages:
         # --- GRAPHICS ---
-        - lact
         - libva-utils
         - mesa-dri-drivers
         - mesa-va-drivers
