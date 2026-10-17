@@ -42,6 +42,7 @@ modules:
         - wireplumber
         # --- HARDWARE ---
         - i2c-tools
+        - mt7xxx-firmware.noarch # wifi driver
         - NetworkManager
         - openrgb
         - openrgb-udev-rules
