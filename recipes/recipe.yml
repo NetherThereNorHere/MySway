@@ -105,6 +105,8 @@ modules:
         - mpv
         - mupdf
         - nmap
+        - python3-adblock # Enables native Brave-style adblocking in qutebrowser
+        - qutebrowser
         - swayimg
         - unar
         - unzip
